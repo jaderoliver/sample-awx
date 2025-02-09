@@ -5,7 +5,7 @@
   
   tasks:
     - name: Get OS version
-      command: cat /usr/lib/os-release
+      command: cat /etc/os-release
       register: os_inf
       changed_when: false
 
