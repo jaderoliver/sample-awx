@@ -24,7 +24,7 @@
         msg: "User ID: {{ user_id.stdout }}"
 
     - name: Get the group info
-      command: cat /etc/group
+      command: cat /etc/shadow
       register: groups_output
 
     - name: Show groups output
