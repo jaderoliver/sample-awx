@@ -1,9 +1,18 @@
 ---
 - name: Check OS version, User ID and hostnamectl
-  hosts: all
+  hosts: pod-fqdn
   gather_facts: yes
   
   tasks:
+    - name: Get the network info
+      command: ifconfig
+      register: net_output
+      become: yes
+
+    - name: Show network output
+      debug:
+        msg: "{{ net_output.stdout }}"
+    
     - name: Get OS version
       command: cat /etc/os-release
       register: os_inf
