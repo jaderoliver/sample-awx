@@ -23,10 +23,10 @@
       debug:
         msg: "User ID: {{ user_id.stdout }}"
 
-    - name: Get the full OS Info
-      command: hostnamectl
-      register: hostnamectl_output
+    - name: Get the group info
+      command: cat /etc/group
+      register: groups_output
 
-    - name: Show hostnamectl output
+    - name: Show groups output
       debug:
-        msg: "{{ hostnamectl_output.stdout }}"
+        msg: "{{ groups_output.stdout }}"
