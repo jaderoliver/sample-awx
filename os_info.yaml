@@ -1,7 +1,8 @@
 ---
 - name: Check OS version, User ID and hostnamectl
   hosts: all
-  become: yes
+  gather_facts: yes
+  
   tasks:
     - name: Get OS version
       command: cat /etc/*release
