@@ -6,7 +6,7 @@
   
   tasks:
     - name: Get OS version
-      command: cat /etc/*release
+      command: etc/os-release
       register: os_version
       changed_when: false
 
