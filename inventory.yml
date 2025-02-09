@@ -1,5 +1,12 @@
 all:
-  hosts:
-    pod-target:
-      ansible_host: target.default.svc.cluster.local
-      ansible_port: 2022
+  children:
+    fqdn:
+      hosts:
+        pod-fqdn:
+          ansible_host: target.default.svc.cluster.local
+          ansible_port: 2022
+    ipadd:
+      hosts:
+        pod-ipadd:
+          ansible_host: 10.244.0.19
+          ansible_port: 22
