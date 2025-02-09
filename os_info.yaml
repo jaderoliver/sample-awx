@@ -2,6 +2,7 @@
 - name: Check OS version, User ID and hostnamectl
   hosts: all
   gather_facts: yes
+  become: true
   
   tasks:
     - name: Get OS version
