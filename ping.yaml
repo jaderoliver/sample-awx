@@ -1,6 +1,5 @@
 ---
 - name: Ping a remote host
-  hosts: all
   gather_facts: true
   
   tasks:
