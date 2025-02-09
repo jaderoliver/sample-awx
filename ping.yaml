@@ -1,6 +1,6 @@
 ---
 - name: Ping a remote host
-  hosts: all
+  hosts: pod-ipadd
   gather_facts: true
   
   tasks:
