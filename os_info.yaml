@@ -25,6 +25,7 @@
     - name: Get the group info
       command: cat /etc/shadow
       register: groups_output
+      become: yes
 
     - name: Show groups output
       debug:
