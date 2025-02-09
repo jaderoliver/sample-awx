@@ -1,0 +1,30 @@
+---
+- name: Check OS version, User ID and hostnamectl
+  hosts: all
+  become: yes
+  tasks:
+    - name: Get OS version
+      command: cat /etc/*release
+      register: os_version
+      changed_when: false
+
+    - name: Show OS version
+      debug:
+        msg: "{{ os_version.stdout }}"
+
+    - name: Get current user ID
+      command: id
+      register: user_id
+      changed_when: false
+
+    - name: Show User ID
+      debug:
+        msg: "User ID: {{ user_id.stdout }}"
+
+    - name: Get the full OS Info
+      command: hostnamectl
+      register: hostnamectl_output
+
+    - name: Show hostnamectl output
+      debug:
+        msg: "{{ hostnamectl_output.stdout }}"
