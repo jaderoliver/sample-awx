@@ -1,3 +1,4 @@
-hosts:
-  pod-target:
-    ansible_host: target.default.svc.cluster.local
+all:
+  hosts:
+    pod-target:
+      ansible_host: target.default.svc.cluster.local
